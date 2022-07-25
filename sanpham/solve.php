@@ -1,5 +1,6 @@
 <?php
   include "../Model/ProductManagement.php";
+  include "../infoDB.php";
   $sql = "SELECT * FROM sanpham WHERE TRUE";
   if(isset($_GET["search"])){
       if(strlen ($_GET["search"]) != 0){
@@ -7,6 +8,6 @@
       }
   }
   $p = new ProductManagement();
-  $p->getDataTable($sql);
+  $p->getDataTable($sql, $conn);
   $p->html($p->getTop(266));
 ?>

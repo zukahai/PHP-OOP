@@ -2,9 +2,7 @@
 
 <header id="header" class="fixed-top d-flex align-items-center bg-dark text-light">
     <div class="container d-flex align-items-center">
-        <!-- <h1 class="logo me-auto"><a href="index.html">Presento<span>.</span></a></h1> -->
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="index.html" class="logo me-auto"><img src="../assets/img/logomoi.png" alt=""></a>
+        <a href="<?php echo $domain?>" class="logo me-auto"><img src="../assets/img/logomoi.png" alt=""></a>
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>

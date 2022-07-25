@@ -28,8 +28,13 @@
             }
         }
 
-        public function getDataTable($sql) {
-            include "../infoDB.php";
+        public function html_Home($list) {
+            foreach ($list as &$value) {
+                $value->html_Home();
+            }
+        }
+
+        public function getDataTable($sql, $conn) {
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {

@@ -25,58 +25,10 @@
     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/tel.css">
+    <link rel="stylesheet" href="./assets/css/slide.css">
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-
-    <style>
-      html,
-      body {
-        position: relative;
-        height: 100%;
-      }
-
-      body {
-        background: #eee;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color: #000;
-        margin: 0;
-        padding: 0;
-      }
-
-      .swiper {
-        width: 100%;
-        height: 100%;
-      }
-
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      }
-
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    </style>
 </head>
 
 <body>
@@ -118,6 +70,7 @@
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".mySwiper", {
+        rewind: true,
         pagination: {
           el: ".swiper-pagination",
           type: "fraction",
@@ -128,7 +81,7 @@
         },
         autoplay: {
           delay: 3500,
-          disableOnInteraction: false,
+          disableOnInteraction: true,
         }
       });
     </script>
@@ -144,45 +97,47 @@
 
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6">
+                    <div class="col-lg-4 col-md-6">
                         <div class="count-box">
-                            <i class="bi bi-emoji-smile"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Happy Clients</p>
+                            <i class="bi bi-graph-up-arrow"></i>
+                            <span data-purecounter-start="0" data-purecounter-end="1234" data-purecounter-duration="1" class="purecounter"></span>
+                            <p>Lượt truy cập</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
+                    <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
                         <div class="count-box">
-                            <i class="bi bi-journal-richtext"></i>
+                            <i class="bi bi-telephone-inbound"></i>
                             <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Projects</p>
+                            <p>Cuộc gọi</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
+                    <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
                         <div class="count-box">
-                            <i class="bi bi-headset"></i>
+                            <i class="bi bi-bricks"></i>
                             <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Hours Of Support</p>
+                            <p>Sản phẩm</p>
                         </div>
                     </div>
-
-                    <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-                        <div class="count-box">
-                            <i class="bi bi-people"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Hard Workers</p>
-                        </div>
-                    </div>
-
                 </div>
 
             </div>
         </section>
     </main>
-
-
+    <div class="text-center container py-2 my-3">
+    <div class="row data">
+        <h1 class="text-center text-danger">Sản phẩm nổi bật</h1> 
+        <?php
+          include "infoDB.php";
+          include "./Model/ProductManagement.php";
+          $p = new ProductManagement();
+          $sql = "SELECT * FROM sanpham WHERE TRUE";
+          $p->getDataTable($sql, $conn);
+          $p->html_Home($p->getTop(3));
+        ?> 
+    </div>
+    </div>
 
     <!-- ======= Footer ======= -->
     <?php include "footer.php" ?>
