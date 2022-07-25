@@ -1,0 +1,13 @@
+git add .
+git commit -m "Linh da sua code nay"
+git push
+ 
+git pull
+
+
+map:
+https://www.embedmymap.com/
+
+
+tel:
+https://thichchiase.com/programing/tao-icon-phone-nhap-nhay-voi-html-va-css/
