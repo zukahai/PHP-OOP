@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-lg-3 col-md-6 footer-contact">
+            <div class="col-lg-4 col-md-6 footer-contact">
                 <h5>Công Ty Cổ Phần Xây Dựng & Sản Xuất Dgrc<span>.</span></h5><br>
                 <p>
                     248 Cách Mạng Tháng 8 <br> Khuê Trung, Cẩm Lệ, Đà Nẵng<br><br>
@@ -15,19 +15,20 @@
                 </p>
             </div>
 
-            <div class="col-lg-2 col-md-6 footer-links">
+            <div class="col-lg-4 col-md-6 footer-links d-flex justify-content-center">
             <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=300&amp;height=300&amp;hl=en&amp;q=bê tông sợi thuỷ tinh Cách Mạng Tháng 8 - Quận Cẩm Lệ&amp;t=p&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div><style>.mapouter{position:relative;text-align:right;height:300px;}.gmap_canvas {overflow:hidden;background:none!important;width:400px;height:300px;}.gmap_iframe {width:500px!important;height:300px!important;}</style></div>
             </div>
 
-            <div class="col-lg-3 col-md-6 footer-links">
+            <!-- <div class="col-lg-3 col-md-6 footer-links">
                
-            </div>
+            </div> -->
 
-            <div class="col-lg-4 col-md-6 footer-newsletter">
+            <div class="col-lg-4 col-md-6 footer-newsletter d-flex justify-content-center">
                 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0" nonce="q1uff75T"></script>
                     <div class="fb-page row" data-href="https://www.facebook.com/dgrc3d/"
                     data-tabs="timeline" data-height="300"
                     data-small-header="true"
+                    data-width="500"
                     data-adapt-container-width="true"
                     data-hide-cover="true"
                     data-show-facepile="true">
