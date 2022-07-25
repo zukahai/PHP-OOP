@@ -28,6 +28,55 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+      html,
+      body {
+        position: relative;
+        height: 100%;
+      }
+
+      body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      }
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
 </head>
 
 <body>
@@ -36,23 +85,54 @@
     <?php include "menu.php" ?>
     <!-- End Header -->
 
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-
-        <div class="container" data-aos="zoom-out" data-aos-delay="100">
-            <div class="row">
-                <div class="col-xl-6">
-                    <h1>Bê tông sợi thuỷ tinh</h1>
-                    <h2>Bê tông sợi thủy tinh là chuyên gia hàng đầu về vật liệu GRC. 
-                        Chúng tôi cung cấp các dịch vụ liên quan đến GRC bao gồm: 
-                        Tư vấn; Thiết kế; Sản xuất; Thi công.</h2>
-                    <a href="#about" class="btn-get-started scrollto">Bắt đầu</a>
+     <!-- Swiper -->
+     <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <section id="hero" class="d-flex align-items-center">
+            <div class="container" data-aos="zoom-out" data-aos-delay="100">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <h1>Bê tông sợi thuỷ tinh</h1>
+                        <h2>Bê tông sợi thủy tinh là chuyên gia hàng đầu về vật liệu GRC. 
+                            Chúng tôi cung cấp các dịch vụ liên quan đến GRC bao gồm: 
+                            Tư vấn; Thiết kế; Sản xuất; Thi công.</h2>
+                        <a href="#about" class="btn-get-started scrollto">Bắt đầu</a>
+                    </div>
                 </div>
             </div>
+          </section>
         </div>
 
-    </section>
-    <!-- End Hero -->
+        <div class="swiper-slide"><img src="./Images/bg.jpg" alt="" srcset=""></div>
+        <div class="swiper-slide"><img src="./Images/bg.jpg" alt="" srcset=""></div>
+        <div class="swiper-slide"><img src="./Images/bg.jpg" alt="" srcset=""></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        }
+      });
+    </script>
 
     <main id="main">
 
