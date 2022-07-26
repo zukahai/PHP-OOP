@@ -52,8 +52,8 @@
     <main id="main">
 
         <!-- ======= Blog Single Section ======= -->
-        <section id="blog" class="blog">
-            <div class="container py-5" data-aos="fade-up">
+        <section id="blog" class="blog py-5">
+            <div class="container py-5 mt-5" data-aos="fade-up">
 
                 <div class="row">
 
@@ -61,7 +61,7 @@
 
                         <article class="entry entry-single">
 
-                            <div class="entry-img">
+                            <div class="entry-img d-flex justify-content-center">
                                 <img src="<?php echo $p->getUrl()?>" alt="" class="img-fluid">
                             </div>
 
@@ -71,9 +71,9 @@
 
                             <div class="entry-meta">
                                 <ul>
-                                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">Admin</a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01"><?php echo $p->getDatetime()?></time></a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">0 Comments</a></li>
                                 </ul>
                             </div>
 
@@ -84,25 +84,11 @@
                                 </p>
                             </div>
 
-                            <div class="entry-footer">
-                                <i class="bi bi-folder"></i>
-                                <ul class="cats">
-                                    <li><a href="#">Business</a></li>
-                                </ul>
-
-                                <i class="bi bi-tags"></i>
-                                <ul class="tags">
-                                    <li><a href="#">Creative</a></li>
-                                    <li><a href="#">Tips</a></li>
-                                    <li><a href="#">Marketing</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="entry-img mt-2">
+                            <div class="entry-img mt-2 d-flex justify-content-center">
                                 <img src="<?php echo $p->getUrl()?>" alt="" class="img-fluid">
                             </div>
 
-                            <div class="entry-img mt-2">
+                            <div class="entry-img mt-2 d-flex justify-content-center">
                                 <img src="<?php echo $p->getUrl()?>" alt="" class="img-fluid">
                             </div>
 
@@ -134,17 +120,11 @@
                             <h3 class="sidebar-title">Tags</h3>
                             <div class="sidebar-item tags">
                                 <ul>
-                                    <li><a href="#">App</a></li>
-                                    <li><a href="#">IT</a></li>
-                                    <li><a href="#">Business</a></li>
-                                    <li><a href="#">Mac</a></li>
-                                    <li><a href="#">Design</a></li>
-                                    <li><a href="#">Office</a></li>
-                                    <li><a href="#">Creative</a></li>
-                                    <li><a href="#">Studio</a></li>
-                                    <li><a href="#">Smart</a></li>
-                                    <li><a href="#">Tips</a></li>
-                                    <li><a href="#">Marketing</a></li>
+                                    <li><a href="#">DGRC</a></li>
+                                    <li><a href="#">gachdantuong</a></li>
+                                    <li><a href="#">gach</a></li>
+                                    <li><a href="#">MyLinh</a></li>
+                                    <li><a href="#">HaiZuka</a></li>
                                 </ul>
                             </div>
                             <!-- End sidebar tags-->
