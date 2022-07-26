@@ -108,17 +108,17 @@ if(isset($_FILES["fileToUpload"]["name"])){
     $uploadOk = 0;
   }
 
-  // Check if $uploadOk is set to 0 by an error
-  if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-  // if everything is ok, try to upload file
-  } else {
+  // // Check if $uploadOk is set to 0 by an error
+  // if ($uploadOk == 0) {
+  //   echo "Sorry, your file was not uploaded.";
+  // // if everything is ok, try to upload file
+  // }
+
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
     } else {
       echo "Sorry, there was an error uploading your file.";
     }
-  }
     $id1 = $_POST["id"];
     $name = $_POST["name"];
     $size = $_POST["size"];
@@ -126,7 +126,8 @@ if(isset($_FILES["fileToUpload"]["name"])){
     $material = $_POST["material"];
     $price = $_POST["price"];
 
-  $sql = "INSERT INTO sanpham VALUES ('".$id1."', '".$name."', '".$size."', '".$mass."', '".$material."', '".$price."', '".$target_file."')";
+  $sql = "INSERT INTO sanpham(`ID`, `Name`, `Size`, `Mass`, `Material`, `Price`, `URl`)
+   VALUES ('".$id1."', '".$name."', '".$size."', '".$mass."', '".$material."', '".$price."', '".$target_file."')";
 
   if ($conn->query($sql) === TRUE) {
     // output data of each row

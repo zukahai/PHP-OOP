@@ -5,13 +5,17 @@
         private $name;
         private $material;
         private $price;
+        private $view;
+        private $datetime;
         
-        public function __construct($id, $name, $material, $price, $url) {
+        public function __construct($id, $name, $material, $price, $datetime, $view, $url) {
             $this->id = $id;
             $this->name = $name;
             $this->material = $material;
             $this->url = $url;
             $this->price = $price;
+            $this->datetime = $datetime;
+            $this->view = $view;
         }
 
         public function getId() {
@@ -26,12 +30,24 @@
             return $this->name;
         }
 
+        public function getDatetime() {
+            return $this->datetime;
+        }
+
         public function __toString() {
             return $this->id.", ".$this->name.", ".$this->material.", ".$this->url;
         }
 
         public function display() {
             echo $this;
+        }
+
+        public function small() {
+            echo '<div class="post-item clearfix">';
+            echo '<img src="'.$this->url.'" alt="" style="width: 75px; height: 100px; object-fit: cover;">';
+            echo '<h4><a href="?id='.$this->id.'">'.$this->name.'</a></h4>';
+            echo '<time datetime="2020-01-01">'.$this->datetime.'</time>';
+            echo '</div>';
         }
 
         public function html() {

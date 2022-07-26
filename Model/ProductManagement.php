@@ -22,6 +22,12 @@
             }
         }
 
+        public function small($list) {
+            foreach ($list as &$value) {
+                $value->small();
+            }
+        }
+
         public function html($list) {
             foreach ($list as &$value) {
                 $value->html();
@@ -43,7 +49,9 @@
                     $name = $row['Name'];
                     $price = $row['Price'];
                     $material = $row['Material'];
-                    $this->add(new Product($id, $name, $material, $price, $url));
+                    $datetime = $row['Time'];
+                    $view = $row['View'];
+                    $this->add(new Product($id, $name, $material, $price, $datetime, $view, $url));
                 }
             }
         }
