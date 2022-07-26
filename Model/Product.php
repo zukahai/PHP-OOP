@@ -22,6 +22,10 @@
             return $this->url;
         }
 
+        public function getName() {
+            return $this->name;
+        }
+
         public function __toString() {
             return $this->id.", ".$this->name.", ".$this->material.", ".$this->url;
         }

@@ -1,3 +1,12 @@
+<?php
+    include "../Model/ProductManagement.php";
+    include "../infoDB.php";
+    $sql = "SELECT * FROM sanpham WHERE ID=".$_GET['id'];
+    $pm = new ProductManagement();
+    $pm->getDataTable($sql, $conn);
+    $p = $pm->getList()[0];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +14,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Sản phẩm | Bê tông sợi thuỷ tinh</title>
+    <title><?php echo $p->getName() ?> | Bê tông sợi thuỷ tinh</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -30,14 +39,6 @@
 </head>
 
 <body>
-    <?php
-        include "../Model/ProductManagement.php";
-        include "../infoDB.php";
-        $sql = "SELECT * FROM sanpham WHERE ID=".$_GET['id'];
-        $pm = new ProductManagement();
-        $pm->getDataTable($sql, $conn);
-        $p = $pm->getList()[0];
-    ?>
     <!-- ======= Header ======= -->
     <?php include "../menu.php" ?>
     <!-- End Header -->
