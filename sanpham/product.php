@@ -1,10 +1,16 @@
 <?php
     include "../Model/ProductManagement.php";
     include "../infoDB.php";
-    $sql = "SELECT * FROM sanpham WHERE ID=".$_GET['id'];
+    $id = isset($_GET['id']) ? $_GET['id'] : 1;
+    $sql = "SELECT * FROM sanpham WHERE ID=".$id;
     $pm = new ProductManagement();
     $pm->getDataTable($sql, $conn);
     $p = $pm->getList()[0];
+
+
+    $sql = "SELECT * FROM sanpham";
+    $pm2 = new ProductManagement();
+    $pm2->getDataTable($sql, $conn);
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +66,7 @@
                             </div>
 
                             <h2 class="entry-title">
-                                <a href="blog-single.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
+                                <a href=""><?php echo $p->getName() ?></a>
                             </h2>
 
                             <div class="entry-meta">
@@ -114,29 +120,15 @@
                             <div class="sidebar-item search-form">
                                 <form action="">
                                     <input type="text">
-                                    <button type="submit"><i class="bi bi-search"></i></button>
+                                    <button type=""><i class="bi bi-search"></i></button>
                                 </form>
                             </div>
-                            <!-- End sidebar search formn-->
-
-                            <h3 class="sidebar-title">Categories</h3>
-                            <div class="sidebar-item categories">
-                                <ul>
-                                    <li><a href="#">General <span>(25)</span></a></li>
-                                    <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                                    <li><a href="#">Travel <span>(5)</span></a></li>
-                                    <li><a href="#">Design <span>(22)</span></a></li>
-                                    <li><a href="#">Creative <span>(8)</span></a></li>
-                                    <li><a href="#">Educaion <span>(14)</span></a></li>
-                                </ul>
-                            </div>
-                            <!-- End sidebar categories-->
-
-                            <h3 class="sidebar-title">Recent Posts</h3>
+                        
+                            <h3 class="sidebar-title">Sản phẩm khác</h3>
                             <div class="sidebar-item recent-posts">
                                 <div class="post-item clearfix">
                                     <img src="../assets/img/blog/blog-recent-1.jpg" alt="">
-                                    <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
+                                    <h4><a href="?id=1">Nihil blanditiis at in nihil autem</a></h4>
                                     <time datetime="2020-01-01">Jan 1, 2020</time>
                                 </div>
 
