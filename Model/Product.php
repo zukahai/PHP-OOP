@@ -18,6 +18,10 @@
             return $this->id;
         }
 
+        public function getUrl() {
+            return $this->url;
+        }
+
         public function __toString() {
             return $this->id.", ".$this->name.", ".$this->material.", ".$this->url;
         }
@@ -28,6 +32,7 @@
 
         public function html() {
             echo '<div class="col-lg-4 col-md-12 mb-4">';
+            echo '<a href="product.php?id='.$this->id.'">';
             echo '<div class="card shadow p-2 mb-5 bg-white rounded">';
             echo '<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"';
             echo 'data-mdb-ripple-color="light">';
@@ -49,23 +54,25 @@
             echo '</a>';
             echo '</div>';
             echo '<div class="card-body">';
-            echo '<a href="" class="text-reset">';
+            echo '<a href="product.php?id='.$this->id.'" class="text-reset">';
             echo '<h4 class="card-title mb-3">Mã sản phẩm: '.$this->id.'</h4>';
             echo '</a>';
-            echo '<a href="" class="text-reset">';
+            echo '<a href="product.php?id='.$this->id.'" class="text-reset">';
             echo '<h3 class="card-title mb-3 text-primary">'.$this->name.'</h3>';
             echo '</a>';
-            echo '<a href="" class="text-reset">';
-            echo '<p>'.$this->material.'</p>';
+            echo '<a href="product.php?id='.$this->id.'" class="text-reset">';
+            echo '<h5>'.$this->material.'</h5>';
             echo '</a>';
             echo '<h4 class="mb-3 text-danger"> <span> Giá: </span>'.$this->price.'</h4>';
             echo '</div>';
             echo '</div>';
+            echo "</a>";
             echo '</div>';
         }
 
         public function html_Home() {
             echo '<div class="col-lg-4 col-md-12 mb-4">';
+            echo '<a href="sanpham/product.php?id='.$this->id.'">';
             echo '<div class="card shadow p-2 mb-5 bg-white rounded">';
             echo '<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"';
             echo 'data-mdb-ripple-color="light">';
@@ -87,18 +94,19 @@
             echo '</a>';
             echo '</div>';
             echo '<div class="card-body">';
-            echo '<a href="" class="text-reset">';
+            echo '<a href="sanpham/product.php?id='.$this->id.'" class="text-reset">';
             echo '<h4 class="card-title mb-3">Mã sản phẩm: '.$this->id.'</h4>';
             echo '</a>';
-            echo '<a href="" class="text-reset">';
+            echo '<a href="sanpham/product.php?id='.$this->id.'" class="text-reset">';
             echo '<h3 class="card-title mb-3 text-primary">'.$this->name.'</h3>';
             echo '</a>';
-            echo '<a href="" class="text-reset">';
-            echo '<p>'.$this->material.'</p>';
+            echo '<a href="sanpham/product.php?id='.$this->id.'" class="text-reset">';
+            echo '<h5>'.$this->material.'</h5>';
             echo '</a>';
             echo '<h4 class="mb-3 text-danger"> <span> Giá: </span>'.$this->price.'</h4>';
             echo '</div>';
             echo '</div>';
+            echo "</a>";
             echo '</div>';
         }
     }
