@@ -28,9 +28,9 @@
             }
         }
 
-        public function html($list) {
+        public function html($prePath, $list) {
             foreach ($list as &$value) {
-                $value->html();
+                $value->html($prePath);
             }
         }
 

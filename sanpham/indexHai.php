@@ -1,3 +1,9 @@
+<?php
+  include "../Model/infoDB.php";
+  include "../Model/Views.php";
+  View::increaseViewsByPage($conn, "Product");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -9,5 +9,5 @@
   }
   $p = new ProductManagement();
   $p->getDataTable($sql, $conn);
-  $p->html($p->getTop(266));
+  $p->html("", $p->getTop(266));
 ?>

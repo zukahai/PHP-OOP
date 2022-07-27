@@ -1,3 +1,9 @@
+<?php
+  include "./Model/infoDB.php";
+  include "./Model/Views.php";
+  View::increaseViewsByPage($conn, "Home");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,15 +106,15 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="count-box">
                             <i class="bi bi-graph-up-arrow"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="1234" data-purecounter-duration="1" class="purecounter"></span>
-                            <p>Lượt truy cập</p>
+                            <span data-purecounter-start="0" data-purecounter-end="<?php echo View::getAllView($conn)?>" data-purecounter-duration="1" class="purecounter"></span>
+                            <p>Tổng lượt truy cập</p>
                         </div>
                     </div>
 
                     <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
                         <div class="count-box">
                             <i class="bi bi-telephone-inbound"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+                            <span data-purecounter-start="0" data-purecounter-end="0" data-purecounter-duration="1" class="purecounter"></span>
                             <p>Cuộc gọi</p>
                         </div>
                     </div>
@@ -116,7 +122,7 @@
                     <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
                         <div class="count-box">
                             <i class="bi bi-bricks"></i>
-                            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+                            <span data-purecounter-start="0" data-purecounter-end="<?php echo View::getNumberOfProduct($conn)?>" data-purecounter-duration="1" class="purecounter"></span>
                             <p>Sản phẩm</p>
                         </div>
                     </div>
@@ -134,7 +140,7 @@
           $p = new ProductManagement();
           $sql = "SELECT * FROM sanpham WHERE TRUE";
           $p->getDataTable($sql, $conn);
-          $p->html_Home($p->getTop(3));
+          $p->html("sanpham/",$p->getTop(3));
         ?> 
     </div>
     </div>

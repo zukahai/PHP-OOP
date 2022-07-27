@@ -1,6 +1,8 @@
 <?php
     include "../Model/ProductManagement.php";
     include "../Model/infoDB.php";
+    include "../Model/Views.php";
+
     $id = isset($_GET['id']) ? $_GET['id'] : 1;
     $sql = "SELECT * FROM sanpham WHERE ID=".$id;
     $pm = new ProductManagement();
@@ -11,6 +13,10 @@
     $sql = "SELECT * FROM sanpham";
     $pm2 = new ProductManagement();
     $pm2->getDataTable($sql, $conn);
+
+    if (isset($_GET['id'])) {
+        View::increaseViewsProductById($id, $conn);
+    }
 ?>
 
 <!DOCTYPE html>
