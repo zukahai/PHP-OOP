@@ -47,12 +47,14 @@
                     $id = $row['ID'];
                     $url = $row['URl'];
                     $name = $row['Name'];
+                    $size = $row['Size'];
+                    $mass = $row['Mass'];
                     $price = $row['Price'];
                     $material = $row['Material'];
                     $datetime = $row['Time'];
                     $view = $row['View'];
                     $detail = $row['Detail'];
-                    $this->add(new Product($id, $name, $material, $price, $datetime, $view, $url, $detail));
+                    $this->add(new Product($id, $name, $size, $mass, $material, $price, $datetime, $view, $url, $detail));
                 }
             }
         }

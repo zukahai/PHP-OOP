@@ -40,6 +40,7 @@
     <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/tel.css">
 
     <!-- Template Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
@@ -77,19 +78,45 @@
                                     <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">0 Comments</a></li>
                                 </ul>
                             </div>
+                            
+                            <table class="table mb-5">
+                            <thead>
+                                <th class="text-primary" scope="col">Thông tin</th>
+                                <th class="text-primary" scope="col">Giá trị</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-info">Mã sản phẩm</td>
+                                    <td class="text-info"><?php echo $p->getId() ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-info">Tên sản phẩm</td>
+                                    <td class="text-info"><?php echo $p->getName() ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-info">Kích thước/viên</td>
+                                    <td class="text-info"><?php echo $p->getSize() ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-info">Khối lượng</td>
+                                    <td class="text-info"><?php echo $p->getMass() ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-info">Vật liệu</td>
+                                    <td class="text-info"><?php echo $p->getMaterial() ?></td>
+                                </tr>
+                                <tr>
+                                    <td class="text-info">Giá</td>
+                                    <td class="text-info"><?php echo $p->getPrice() ?></td>
+                                </tr>
+                            </tbody>
+                            </table>
 
                             <div class="entry-content">
                                 <p>
                                 <?php echo str_replace("\n", "<br>", $p->getDetail())?>
                                 </p>
-                            </div>
-
-                            <div class="entry-img mt-2 d-flex justify-content-center">
-                                <img src="<?php echo $p->getUrl()?>" alt="" class="img-fluid">
-                            </div>
-
-                            <div class="entry-img mt-2 d-flex justify-content-center">
-                                <img src="<?php echo $p->getUrl()?>" alt="" class="img-fluid">
                             </div>
 
                             <!-- Swiper -->

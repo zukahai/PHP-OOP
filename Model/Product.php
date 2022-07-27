@@ -8,10 +8,14 @@
         private $view;
         private $datetime;
         private $detail;
+        private $size;
+        private $mass;
         
-        public function __construct($id, $name, $material, $price, $datetime, $view, $url, $detail) {
+        public function __construct($id, $name, $size, $mass, $material, $price, $datetime, $view, $url, $detail) {
             $this->id = $id;
             $this->name = $name;
+            $this->size = $size;
+            $this->mass = $mass;
             $this->material = $material;
             $this->url = $url;
             $this->price = $price;
@@ -24,16 +28,36 @@
             return $this->id;
         }
 
-        public function getUrl() {
-            return $this->url;
-        }
-
         public function getName() {
             return $this->name;
         }
 
+        public function getSize() {
+            return $this->size;
+        }
+
+        public function getMass() {
+            return $this->mass;
+        }
+
+        public function getMaterial() {
+            return $this->material;
+        }
+
+        public function getUrl() {
+            return $this->url;
+        }
+
+        public function getPrice() {
+            return $this->price;
+        }
+
         public function getDatetime() {
             return $this->datetime;
+        }
+
+        public function getView() {
+            return $this->view;
         }
 
         public function getDetail() {
