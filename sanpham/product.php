@@ -39,6 +39,7 @@
     <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
     <!-- Template Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
@@ -62,7 +63,7 @@
                         <article class="entry entry-single">
 
                             <div class="entry-img d-flex justify-content-center">
-                                <img src="<?php echo $p->getUrl()?>" alt="" class="img-fluid">
+                                <img src="<?php echo $p->getUrl()?>" alt="" class="img-fluid w-100" style="height: 500px; object-fit: cover;">
                             </div>
 
                             <h2 class="entry-title">
@@ -79,8 +80,7 @@
 
                             <div class="entry-content">
                                 <p>
-                                    Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta. Et eveniet enim. Qui velit est ea dolorem doloremque deleniti aperiam unde soluta. Est cum et quod quos
-                                    aut ut et sit sunt. Voluptate porro consequatur assumenda perferendis dolore.
+                                <?php echo str_replace("\n", "<br>", $p->getDetail())?>
                                 </p>
                             </div>
 
@@ -91,6 +91,39 @@
                             <div class="entry-img mt-2 d-flex justify-content-center">
                                 <img src="<?php echo $p->getUrl()?>" alt="" class="img-fluid">
                             </div>
+
+                            <!-- Swiper -->
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="../Images/slide2.jpg" style="width: 100%; height: 400px; object-fit: cover;" alt="" srcset=""></div>
+                                    <div class="swiper-slide"><img src="../Images/slide3.jpg" style="width: 100%; height: 400px; object-fit: cover;" alt="" srcset=""></div>
+                                </div>
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+
+                            <!-- Swiper JS -->
+                            <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+                            <!-- Initialize Swiper -->
+                            <script>
+                            var swiper = new Swiper(".mySwiper", {
+                                rewind: true,
+                                pagination: {
+                                el: ".swiper-pagination",
+                                type: "fraction",
+                                },
+                                navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                                },
+                                autoplay: {
+                                delay: 2000,
+                                disableOnInteraction: true,
+                                }
+                            });
+                            </script>
 
                         </article>
                         

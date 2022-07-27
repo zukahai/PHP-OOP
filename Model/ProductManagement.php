@@ -51,7 +51,8 @@
                     $material = $row['Material'];
                     $datetime = $row['Time'];
                     $view = $row['View'];
-                    $this->add(new Product($id, $name, $material, $price, $datetime, $view, $url));
+                    $detail = $row['Detail'];
+                    $this->add(new Product($id, $name, $material, $price, $datetime, $view, $url, $detail));
                 }
             }
         }

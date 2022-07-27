@@ -7,8 +7,9 @@
         private $price;
         private $view;
         private $datetime;
+        private $detail;
         
-        public function __construct($id, $name, $material, $price, $datetime, $view, $url) {
+        public function __construct($id, $name, $material, $price, $datetime, $view, $url, $detail) {
             $this->id = $id;
             $this->name = $name;
             $this->material = $material;
@@ -16,6 +17,7 @@
             $this->price = $price;
             $this->datetime = $datetime;
             $this->view = $view;
+            $this->detail = $detail;
         }
 
         public function getId() {
@@ -32,6 +34,10 @@
 
         public function getDatetime() {
             return $this->datetime;
+        }
+
+        public function getDetail() {
+            return $this->detail;
         }
 
         public function __toString() {
