@@ -133,13 +133,14 @@
     </main>
     <div class="text-center container py-2 my-3">
     <div class="row data">
-        <h1 class="text-center text-danger">Sản phẩm nổi bật</h1> 
+        <h1 class="text-center text-danger mb-5">Sản phẩm nổi bật</h1> 
         <?php
           include "./Model/infoDB.php";
           include "./Model/ProductManagement.php";
           $p = new ProductManagement();
           $sql = "SELECT * FROM sanpham WHERE TRUE";
           $p->getDataTable($sql, $conn);
+          $p->sortByViewDesc();
           $p->html("sanpham/",$p->getTop(3));
         ?> 
     </div>

@@ -34,12 +34,6 @@
             }
         }
 
-        public function html_Home($list) {
-            foreach ($list as &$value) {
-                $value->html_Home();
-            }
-        }
-
         public function getDataTable($sql, $conn) {
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
@@ -57,6 +51,18 @@
                     $this->add(new Product($id, $name, $size, $mass, $material, $price, $datetime, $view, $url, $detail));
                 }
             }
+        }
+
+        public function sortByViewDesc() {
+            usort($this->list, function($a, $b) {return $a->getView() < $b->getView();});
+        }
+
+        public function sortByTimeDesc() {
+            usort($this->list, function($a, $b) {
+                $d1 = new DateTime(date($a->getDatetime()));
+                $d2 = new DateTime(date($b->getDatetime()));
+                return $d1 < $d2;
+            });
         }
 
         public function getTop($n) {

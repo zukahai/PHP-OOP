@@ -9,5 +9,6 @@
   }
   $p = new ProductManagement();
   $p->getDataTable($sql, $conn);
+  $p->sortByTimeDesc();
   $p->html("", $p->getTop(266));
 ?>

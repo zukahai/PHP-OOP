@@ -81,7 +81,7 @@
                                 <ul>
                                     <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">Admin</a></li>
                                     <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01"><?php echo $p->getDatetime()?></time></a></li>
-                                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">0 Comments</a></li>
+                                    <li class="d-flex align-items-center"><i class="bi bi-eye"></i> <a href="blog-single.html"><?php echo $p->getView()?> Views</a></li>
                                 </ul>
                             </div>
                             
@@ -184,7 +184,10 @@
                         
                             <h3 class="sidebar-title">Sản phẩm khác</h3>
                             <div class="sidebar-item recent-posts">
-                                <?php $pm2->small($pm2->getList()); ?>
+                                <?php
+                                    $pm2->sortByTimeDesc();
+                                    $pm2->small($pm2->getList()); 
+                                ?>
 
                             </div>
                             <!-- End sidebar recent posts-->

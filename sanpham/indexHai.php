@@ -46,7 +46,7 @@
 
     <div class="text-center container py-5 mt-5">
 
-        <h2 class="mt-4 mb-5"><strong>Sản phẩm</strong></h2>
+        <h2 class="mt-4 mb-2 mb-5"><strong>Sản phẩm</strong></h2>
         <div class="d-flex justify-content-center mb-5">
             <input type="text" id="search" class="mx-2 input form-control" placeholder="Nhập mã sảm phẩm">
             <input class="btn-primary btn mx-2" type="button" id="find" value="Tìm kiếm">
