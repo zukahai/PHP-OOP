@@ -168,7 +168,7 @@ if(isset($_POST['name'])){
     echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
     echo '</div>';
     echo '<div class="modal-body">';
-    echo '<div class="alert alert-success">Thêm thành công</div>';
+    echo '<div class="alert alert-success">Sửa thành công</div>';
     echo '</div>';
     echo '</div>';
     echo '</div>';
@@ -184,7 +184,7 @@ if(isset($_POST['name'])){
     echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
     echo '</div>';
     echo '<div class="modal-body">';
-    echo '<div class="alert alert-danger">Thêm thất bại</div>';
+    echo '<div class="alert alert-danger">Sửa thất bại</div>';
     echo '</div>';
     echo '</div>';
     echo '</div>';

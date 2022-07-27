@@ -70,7 +70,7 @@
 
     <div class="form-group">
       <label for="detail">Giới thiệu chi tiết sản phẩm</label>
-      <textarea id="detail" name="detail"><h1>Hello, World!</h1></textarea>
+      <textarea id="detail" name="detail"></textarea>
     </div>
     <div class = "form-group d-flex justify-content-center">
       Select image to upload: <br>
