@@ -1,6 +1,6 @@
 <?php
   include "../Model/ProductManagement.php";
-  include "../infoDB.php";
+  include "../Model/infoDB.php";
   $sql = "SELECT * FROM sanpham WHERE TRUE";
   if(isset($_GET["search"])){
       if(strlen ($_GET["search"]) != 0){

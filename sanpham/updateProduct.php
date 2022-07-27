@@ -1,6 +1,6 @@
 <?php
     include "../Model/ProductManagement.php";
-    include "../infoDB.php";
+    include "../Model/infoDB.php";
     $id = isset($_GET['id']) ? $_GET['id'] : 1;
     $sql = "SELECT * FROM sanpham WHERE ID=".$id;
     $pm = new ProductManagement();
@@ -50,7 +50,7 @@
 <body>
 
 <div class="container">
-<?php include "../menu.php" ?>
+<?php include "../Model/menu.php" ?>
     <form action="" method="post" enctype="multipart/form-data" class="mt-5 py-5">
     <div class="form-group ">
         <label for="id">Mã sản phẩm</label>
@@ -96,8 +96,6 @@
 </form>
 <?php
 if(isset($_POST['name'])){
-  include "../infoDB.php";
-
   $id = $p->getId();
   $name = $_POST['name'];
   $size = $_POST['size'];
@@ -196,7 +194,7 @@ if(isset($_POST['name'])){
 }
 ?>
   <!-- ======= Footer ======= -->
-  <?php include "../footer.php" ?>
+  <?php include "../Model/footer.php" ?>
     <!-- End Footer -->
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     <!-- Vendor JS Files -->

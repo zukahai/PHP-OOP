@@ -41,7 +41,7 @@
 <body>
 
 <div class="container">
-<?php include "../menu.php" ?>
+<?php include "../Model/menu.php" ?>
     <form action="" method="post" enctype="multipart/form-data" class="mt-5 py-5">
     <div class="form-group ">
         <label for="id">Mã sản phẩm</label>
@@ -85,14 +85,7 @@
 </form>
 <?php
 if(isset($_FILES["fileToUpload"]["name"])){
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "web";
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
+  include "../Model/infoDB.php";
 
   $target_dir = "ImageUploads/";
   $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
@@ -194,7 +187,7 @@ if(isset($_FILES["fileToUpload"]["name"])){
 }
 ?>
   <!-- ======= Footer ======= -->
-  <?php include "../footer.php" ?>
+  <?php include "../Model/footer.php" ?>
     <!-- End Footer -->
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     <!-- Vendor JS Files -->

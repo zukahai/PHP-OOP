@@ -35,7 +35,7 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <?php include "../menu.php" ?>
+    <?php include "../Model/menu.php" ?>
     <!-- End Header -->
 
     <div class="text-center container py-5 mt-5">
@@ -56,7 +56,7 @@
         </div>
     </div>
     <!-- ======= Footer ======= -->
-    <?php include "../footer.php" ?>
+    <?php include "../Model/footer.php" ?>
     <!-- End Footer -->
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

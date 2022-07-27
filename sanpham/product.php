@@ -1,6 +1,6 @@
 <?php
     include "../Model/ProductManagement.php";
-    include "../infoDB.php";
+    include "../Model/infoDB.php";
     $id = isset($_GET['id']) ? $_GET['id'] : 1;
     $sql = "SELECT * FROM sanpham WHERE ID=".$id;
     $pm = new ProductManagement();
@@ -48,7 +48,7 @@
 
 <body>
     <!-- ======= Header ======= -->
-    <?php include "../menu.php" ?>
+    <?php include "../Model/menu.php" ?>
     <!-- End Header -->
 
     <main id="main">
@@ -211,7 +211,7 @@
     <!-- End #main -->
 
     <!-- ======= Footer ======= -->
-    <?php include "../footer.php" ?>
+    <?php include "../Model/footer.php" ?>
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

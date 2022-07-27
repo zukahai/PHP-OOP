@@ -34,7 +34,7 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <?php include "menu.php" ?>
+    <?php include "./Model/menu.php" ?>
     <!-- End Header -->
 
      <!-- Swiper -->
@@ -129,7 +129,7 @@
     <div class="row data">
         <h1 class="text-center text-danger">Sản phẩm nổi bật</h1> 
         <?php
-          include "infoDB.php";
+          include "./Model/infoDB.php";
           include "./Model/ProductManagement.php";
           $p = new ProductManagement();
           $sql = "SELECT * FROM sanpham WHERE TRUE";
@@ -140,7 +140,7 @@
     </div>
 
     <!-- ======= Footer ======= -->
-    <?php include "footer.php" ?>
+    <?php include "./Model/footer.php" ?>
     <!-- End Footer -->
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
