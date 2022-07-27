@@ -115,7 +115,7 @@
 
                             <div class="entry-content">
                                 <p>
-                                <?php echo str_replace("\n", "<br>", $p->getDetail())?>
+                                <?php echo $p->getDetail()?>
                                 </p>
                             </div>
 

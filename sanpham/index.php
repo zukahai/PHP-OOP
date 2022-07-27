@@ -18,6 +18,23 @@
     <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="../assets/css/tel.css">
 
+    <script src="https://cdn.tiny.cloud/1/uvz9twni3jdi0u4gxcil3o99099o63a23k0j1gxujxm0cn1a/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+        tinymce.init({
+            selector: '#detail',
+            plugins: [
+                'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export',
+                'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
+                'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'media', 'table', 'help', 'wordcount'
+            ],
+            toolbar: 'undo redo | formatpainter casechange blocks | bold italic backcolor | ' +
+                'alignleft aligncenter alignright alignjustify | ' +
+                'bullist numlist checklist outdent indent | removeformat | a11ycheck code table help',
+            branding: false
+        });
+    </script>
+
     <link href="../assets/css/style.css" rel="stylesheet">
   </head>
 <body>
@@ -52,7 +69,7 @@
 
     <div class="form-group">
       <label for="detail">Giới thiệu chi tiết sản phẩm</label>
-      <textarea class="form-control" id="detail" rows="8" name="detail"></textarea>
+      <textarea id="detail" name="detail"><h1>Hello, World!</h1></textarea>
     </div>
     <div class = "form-group d-flex justify-content-center">
       Select image to upload: <br>
