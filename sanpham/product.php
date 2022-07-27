@@ -119,12 +119,17 @@
                                 <?php  echo str_replace("<img", "<img style=\"max-width: 100%;\"", $p->getDetail())?>
                                 </p>
                             </div>
-
+                            <hr>
+                            <h3 class="text-primary">Các sản phẩm khác</h3>
                             <!-- Swiper -->
                             <div class="swiper mySwiper">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide"><img src="../Images/slide2.jpg" style="width: 100%; height: 400px; object-fit: cover;" alt="" srcset=""></div>
-                                    <div class="swiper-slide"><img src="../Images/slide3.jpg" style="width: 100%; height: 400px; object-fit: cover;" alt="" srcset=""></div>
+                                <?php
+                                    foreach ($pm2->getList() as &$value) {
+                                        echo '<div class="swiper-slide"> <a href="?id='.$value->getId().'"><img src="'.$value->getUrl().'" style="width: 100%; height: 400px; object-fit: cover;"></a></div>';
+                                    }
+                                ?>
+        
                                 </div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
@@ -147,7 +152,7 @@
                                 prevEl: ".swiper-button-prev",
                                 },
                                 autoplay: {
-                                delay: 2000,
+                                delay: 3500,
                                 disableOnInteraction: true,
                                 }
                             });

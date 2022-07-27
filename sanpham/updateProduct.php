@@ -82,8 +82,10 @@
       <textarea id="detail" name="detail"><h1><?php echo $p->getDetail()?></h1></textarea>
     </div>
     <div class = "form-group d-flex justify-content-center">
-      Select image to upload: <br>
-      <input type="file" name="fileToUpload" id="fileToUpload">
+      <div class="custom-file mb-4">
+          <label for="fileToUpload" class="custom-file-label">Image</label>
+          <input type="file" class="custom-file-input" id="fileToUpload" name="fileToUpload" />
+  		</div>
       
       </div>
     <div class="form-group d-flex justify-content-center">
@@ -219,7 +221,13 @@ if(isset($_POST['name'])){
         $('#myModal').modal('hide');
     });
 	</script>
-    
+    <script>
+	// Add the following code if you want the name of the file appear on select
+		$(".custom-file-input").on("change", function() {
+		  var fileName = $(this).val().split("\\").pop();
+		  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+		});
+	</script>
 
 </body>
 </html>

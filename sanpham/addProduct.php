@@ -72,11 +72,11 @@
       <label for="detail">Giới thiệu chi tiết sản phẩm</label>
       <textarea id="detail" name="detail"></textarea>
     </div>
-    <div class = "form-group d-flex justify-content-center">
-      Select image to upload: <br>
-      <input type="file" name="fileToUpload" id="fileToUpload">
-      
-      </div>
+    
+      <div class="custom-file mb-4">
+          <label for="fileToUpload" class="custom-file-label">Image</label>
+          <input type="file" class="custom-file-input" id="fileToUpload" name="fileToUpload" />
+  		</div>
     <div class="form-group d-flex justify-content-center">
       <input class="btn-success btn" type="submit" value="Upload" name="submit" id="submit">
     </div>
@@ -218,6 +218,14 @@ if(isset($_FILES["fileToUpload"]["name"])){
       $('#myModal').on('click', 'button.close', function (eventObject) {
         $('#myModal').modal('hide');
     });
+	</script>
+
+  <script>
+	// Add the following code if you want the name of the file appear on select
+		$(".custom-file-input").on("change", function() {
+		  var fileName = $(this).val().split("\\").pop();
+		  $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+		});
 	</script>
     
 
