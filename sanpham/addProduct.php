@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+    <title>Thêm sản phẩm | Bê tông sợi thuỷ tinh</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
@@ -52,7 +53,7 @@
     </div>
     <div class="form-group ">
         <label for="size">Kích thước/viên</label>
-        <input type="text" class="form-control" name="size" id="size"  >
+        <input type="text" class="form-control" name="size" id="size">
     </div>
     <div class="form-group ">
         <label for="mass">Khối lượng</label>
@@ -84,9 +85,6 @@
 </form>
 <?php
 if(isset($_FILES["fileToUpload"]["name"])){
-      echo $_POST['id'];
-     
-
   $servername = "localhost";
   $username = "root";
   $password = "";

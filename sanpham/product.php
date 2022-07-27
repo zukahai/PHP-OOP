@@ -115,7 +115,8 @@
 
                             <div class="entry-content">
                                 <p>
-                                <?php echo $p->getDetail()?>
+                                
+                                <?php  echo str_replace("<img", "<img style=\"max-width: 100%;\"", $p->getDetail())?>
                                 </p>
                             </div>
 

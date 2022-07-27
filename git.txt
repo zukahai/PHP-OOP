@@ -14,3 +14,6 @@ https://thichchiase.com/programing/tao-icon-phone-nhap-nhay-voi-html-va-css/
 
 icon:
 https://icons.getbootstrap.com/
+
+Tiny:
+https://www.tiny.cloud/my-account/domains/
