@@ -11,7 +11,7 @@
                 $row = $result->fetch_assoc();
                 return $row['Role'];
             }
-            return "";
+            return "No role";
         }
     }
 ?>

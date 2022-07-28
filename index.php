@@ -64,6 +64,7 @@
 
         <div class="swiper-slide"><img src="./Images/slide2.jpg" alt="" srcset=""></div>
         <div class="swiper-slide"><img src="./Images/slide3.jpg" alt="" srcset=""></div>
+        <div class="swiper-slide"><img src="./Images/slide4.jpg" alt="" srcset=""></div>
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
