@@ -48,11 +48,11 @@
     <div class="col-6 shadow p-3 mb-5 bg-white rounded">
         <div class="form-group my-3">
             <label for="username">Tên đăng nhập</label>
-            <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+            <input type="text" class="form-control" name="id" id="username" placeholder="Username">
         </div>
         <div class="form-group my-3">
             <label for="password">Mật khẩu</label>
-            <input type="text" class="form-control" name="password" id="password" placeholder="Password">
+            <input type="password" class="form-control" name="password" id="password" placeholder="Password">
         </div>
         <div class="form-group my-3">
             <button type="submit" class="btn btn-primary btn-block my-1 col-12" id="submit">Đăng nhập</button>
