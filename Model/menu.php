@@ -2,13 +2,6 @@
 
 <?php
     $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    if ($actual_link != $domain.'/' && $actual_link != $domain."/index.php") {
-        include "../Model/infoDB.php";
-        include "../Model/Account.php";
-    } else {
-        include "Model/infoDB.php";
-        include "Model/Account.php";
-    }
     $htmlLogin = '<a href="'.$domain.'/Login/index.php" class="get-started-btn scrollto">Đăng nhập</a>';
     $htmlAdmin = "";
     if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {

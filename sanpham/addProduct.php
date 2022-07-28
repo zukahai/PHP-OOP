@@ -1,6 +1,11 @@
 <?php
-  include "../Model/404page.php";
-  return;
+  include "../Model/infoDB.php";
+  include "../Model/Account.php";
+
+  if (Account::checkLoginByCookie($conn) != "admin") {
+    include "../Model/404page.php";
+    return;
+  }
 ?>
 
 <!DOCTYPE html>

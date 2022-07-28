@@ -1,5 +1,6 @@
 <?php
   include "./Model/infoDB.php";
+  include "./Model/Account.php";
   include "./Model/Views.php";
   View::increaseViewsByPage($conn, "Home");
 ?>

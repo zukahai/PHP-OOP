@@ -13,5 +13,16 @@
             }
             return "No role";
         }
+
+        public static function checkLoginByCookie($conn) {
+            if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
+                $usernameCookia = $_COOKIE['username'];
+                $passwordCookie = $_COOKIE['password'];
+            } else {
+                $usernameCookia = "";
+                $passwordCookie = "";
+            }
+            return Account::checkLogin($conn, $usernameCookia, $passwordCookie);
+        }
     }
 ?>

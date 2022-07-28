@@ -1,6 +1,7 @@
 <?php
   include "../Model/infoDB.php";
   include "../Model/Views.php";
+  include "../Model/Account.php";
   View::increaseViewsByPage($conn, "Product");
 ?>
 
@@ -44,7 +45,7 @@
     <!-- End Header -->
 
     <div class="container py-5 mt-5 d-flex justify-content-center">
-    <div class="col-6">
+    <div class="col-6 shadow p-3 mb-5 bg-white rounded">
         <div class="form-group my-3">
             <label for="username">Tên đăng nhập</label>
             <input type="text" class="form-control" name="username" id="username" placeholder="Username">

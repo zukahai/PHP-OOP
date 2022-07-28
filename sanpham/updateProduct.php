@@ -1,11 +1,19 @@
 <?php
-    include "../Model/ProductManagement.php";
-    include "../Model/infoDB.php";
-    $id = isset($_GET['id']) ? $_GET['id'] : 1;
-    $sql = "SELECT * FROM sanpham WHERE ID=".$id;
-    $pm = new ProductManagement();
-    $pm->getDataTable($sql, $conn);
-    $p = $pm->getList()[0];
+  include "../Model/ProductManagement.php";
+  include "../Model/infoDB.php";
+  $id = isset($_GET['id']) ? $_GET['id'] : 1;
+  $sql = "SELECT * FROM sanpham WHERE ID=".$id;
+  $pm = new ProductManagement();
+  $pm->getDataTable($sql, $conn);
+  $p = $pm->getList()[0];
+
+  include "../Model/infoDB.php";
+  include "../Model/Account.php";
+
+  if (Account::checkLoginByCookie($conn) != "admin") {
+    include "../Model/404page.php";
+    return;
+  }
 ?>
 <!DOCTYPE html>
 <html>

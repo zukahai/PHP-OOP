@@ -2,6 +2,7 @@
     include "../Model/ProductManagement.php";
     include "../Model/infoDB.php";
     include "../Model/Views.php";
+    include "../Model/Account.php";
 
     $id = isset($_GET['id']) ? $_GET['id'] : 1;
     $sql = "SELECT * FROM sanpham WHERE ID=".$id;

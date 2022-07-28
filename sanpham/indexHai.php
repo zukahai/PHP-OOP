@@ -1,6 +1,7 @@
 <?php
   include "../Model/infoDB.php";
   include "../Model/Views.php";
+  include "../Model/Account.php";
   View::increaseViewsByPage($conn, "Product");
 ?>
 
