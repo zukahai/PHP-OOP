@@ -1,3 +1,8 @@
+<?php
+  include "../Model/404page.php";
+  return;
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -122,50 +127,39 @@ if(isset($_FILES["fileToUpload"]["name"])){
     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
     $uploadOk = 0;
   }
+  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+  } else {
+    echo "Sorry, there was an error uploading your file.";
+  }
+  $id1 = $_POST["id"];
+  $name = $_POST["name"];
+  $size = $_POST["size"];
+  $mass = $_POST["mass"];
+  $material = $_POST["material"];
+  $price = $_POST["price"];
+  $detail = $_POST["detail"];
 
-  // // Check if $uploadOk is set to 0 by an error
-  // if ($uploadOk == 0) {
-  //   echo "Sorry, your file was not uploaded.";
-  // // if everything is ok, try to upload file
-  // }
+$sql = "INSERT INTO sanpham(`ID`, `Name`, `Size`, `Mass`, `Material`, `Price`, `URl`, `Detail`)
+  VALUES ('".$id1."', '".$name."', '".$size."', '".$mass."', '".$material."', '".$price."', '".$target_file."', '".$detail."')";
 
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-      echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-    } else {
-      echo "Sorry, there was an error uploading your file.";
-    }
-    $id1 = $_POST["id"];
-    $name = $_POST["name"];
-    $size = $_POST["size"];
-    $mass = $_POST["mass"];
-    $material = $_POST["material"];
-    $price = $_POST["price"];
-    $detail = $_POST["detail"];
-
-  $sql = "INSERT INTO sanpham(`ID`, `Name`, `Size`, `Mass`, `Material`, `Price`, `URl`, `Detail`)
-   VALUES ('".$id1."', '".$name."', '".$size."', '".$mass."', '".$material."', '".$price."', '".$target_file."', '".$detail."')";
-
-  if ($conn->query($sql) === TRUE) {
-    // output data of each row
-      echo '<div class="row">';
-      echo '<div id="myModal" class="modal fade">';
-      echo '<div class="modal-dialog">';
-      echo '<div class="modal-content">';
-      echo '<div class="modal-header">';
-      echo '<h5 class="modal-title">Thông báo</h5>';
-      echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-      echo '</div>';
-      echo '<div class="modal-body">';
-      echo '<div class="alert alert-success">Thêm thành công</div>';
-      echo '</div>';
-      echo '</div>';
-      echo '</div>';
-      echo '</div>';
-      echo '</div>';
-
-  
-    // session_start();
-    // $_SESSION['username'] = $Username;
+if ($conn->query($sql) === TRUE) {
+  // output data of each row
+    echo '<div class="row">';
+    echo '<div id="myModal" class="modal fade">';
+    echo '<div class="modal-dialog">';
+    echo '<div class="modal-content">';
+    echo '<div class="modal-header">';
+    echo '<h5 class="modal-title">Thông báo</h5>';
+    echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+    echo '</div>';
+    echo '<div class="modal-body">';
+    echo '<div class="alert alert-success">Thêm thành công</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
   } else {
     echo '<div class="row">';
     echo '<div id="myModal" class="modal fade">';
