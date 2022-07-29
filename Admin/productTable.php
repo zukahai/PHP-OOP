@@ -59,7 +59,10 @@
           echo '<td>'.$value->getName().'</td>';
           echo '<td>'.$value->getDatetime().'</td>';
           echo '<td>'.$value->getView().'</td>';
-          echo '<td><a class="btn btn-success" href="updateProduct.php?id='.$value->getId().'">Chỉnh sửa</a></td>';
+          echo '<td>
+          <a class="btn btn-success mx-1" href="updateProduct.php?id='.$value->getId().'">Chỉnh sửa</a>
+          <a class="btn btn-danger mx-1" href="deleteProduct.php?id='.$value->getId().'">Xoá</a>
+          </td>';
           echo '<tr>';
         }
       ?>
