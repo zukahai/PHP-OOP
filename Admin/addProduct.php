@@ -6,6 +6,16 @@
     include "../Model/404page.php";
     return;
   }
+
+  function generateRandomString($length = 10) {
+    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+  }
 ?>
 
 <!DOCTYPE html>
@@ -97,7 +107,8 @@
 if(isset($_FILES["fileToUpload"]["name"])){
   include "../Model/infoDB.php";
 
-  $target_dir = "ImageUploads/";
+  $target_dir = "../assets/ImageUploads/";
+  $_FILES["fileToUpload"]["name"] = generateRandomString(50).".png";
   $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
   $uploadOk = 1;
   $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));

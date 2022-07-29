@@ -82,7 +82,7 @@
 
         public function html($prePath) {
             echo '<div class="col-lg-4 col-md-12 mb-4">';
-            echo '<a href="product.php?id='.$this->id.'">';
+            echo '<a href="'.$prePath.'product.php?id='.$this->id.'">';
             echo '<div class="card shadow p-2 mb-5 bg-white rounded">';
             echo '<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"';
             echo 'data-mdb-ripple-color="light">';

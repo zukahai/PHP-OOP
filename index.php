@@ -143,7 +143,7 @@
           $sql = "SELECT * FROM sanpham WHERE TRUE";
           $p->getDataTable($sql, $conn);
           $p->sortByViewDesc();
-          $p->html("sanpham/",$p->getTop(3));
+          $p->html("./sanpham/",$p->getTop(3));
         ?> 
     </div>
     </div>
