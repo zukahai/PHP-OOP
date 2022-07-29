@@ -46,7 +46,7 @@
 	    	 $('#galleryModal').on('show.bs.modal', function (e) {
 	    	    $('#galleryImage').attr("src", $(e.relatedTarget).data("large-src"));
             $('#iddelete').attr("href", $(e.relatedTarget).data("deleteurl"));
-            $('#nameproduct').attr("class","text-warning");
+            $('#nameproduct').attr("value",$(e.relatedTarget).data("name"));
 	    	 });
 	        $("#myModal").modal('show');
 	    });
@@ -59,6 +59,7 @@
 		    <div class="modal-dialog modal-lg">
 		        <div class="modal-content">
               <h2 class="text-center text-primary mt-3">Bạn có thực sự muốn xoá sản phẩm</h2>
+              <h1 class="text-center"><input style="border: none;"  class="text-center text-danger" type="text" value="Ten san pham" id="nameproduct" disabled></input></h1>
 		            <div class="modal-header">
 		                <h3 class="text-center mb-0"></h3>
 		                <button type="button" class="close float-right" aria-label="Close" data-dismiss="modal">
@@ -98,7 +99,7 @@
           echo '<td>'.$value->getView().'</td>';
           echo '<td>
           <a class="btn btn-success mx-1" href="updateProduct.php?id='.$value->getId().'">Chỉnh sửa</a>
-          <a class="btn btn-danger mx-1" href="#galleryModal" data-large-src="'.$value->getUrl().'" data-deleteurl="?idDelete='.$value->getId().'" data-toggle="modal">Xoá</a>
+          <a class="btn btn-danger mx-1" href="#galleryModal" data-large-src="'.$value->getUrl().'" data-deleteurl="?idDelete='.$value->getId().'" data-name="'.$value->getName().'"  data-toggle="modal">Xoá</a>
           </td>';
           echo '<tr>';
         }
