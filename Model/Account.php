@@ -14,6 +14,11 @@
             return "No role";
         }
 
+        public static function deleteById($conn, $id) {
+            $sql = "DELETE FROM `sanpham` WHERE `ID` = '".$id."'";
+            $conn->query($sql);
+        }
+
         public static function checkLoginByCookie($conn) {
             if (isset($_COOKIE['username']) && isset($_COOKIE['password'])) {
                 $usernameCookia = $_COOKIE['username'];
