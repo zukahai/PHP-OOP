@@ -17,7 +17,7 @@
         $htmlAdmin = 
         '<li class="dropdown text-light" ><a href="#" class="text-light"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>'.
             '<ul>'.
-                '<li class="dropdown text-light"><a href="#abc"><span>Sản phẩm</span> <i class="bi bi-chevron-right"></i></a>'.
+                '<li class="dropdown text-light"><a href="'.$domain.'/Admin/productTable.php"><span>Sản phẩm</span> <i class="bi bi-chevron-right"></i></a>'.
                     '<ul>'.
                         '<li><a href="'.$domain.'/Admin/productTable.php">Dach sách sản phẩm</a></li>'.
                         '<li><a href="'.$domain.'/Admin/addProduct.php">Thêm sản phẩm</a></li>'.
