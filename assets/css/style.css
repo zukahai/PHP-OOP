@@ -1886,6 +1886,15 @@ section {
     width: calc(100% - 40px);
 }
 
+.card {
+    transition: transform .35s;
+}
+
+.card:hover {
+    transition: transform .35s;
+    transform: scale(1.1);
+}
+
 .blog .sidebar .search-form form button {
     position: absolute;
     top: 0;
