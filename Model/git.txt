@@ -17,3 +17,18 @@ https://icons.getbootstrap.com/
 
 Tiny:
 https://www.tiny.cloud/my-account/domains/
+
+
+
+
+Control panel username:	freev_32276525
+Control panel password:	**********
+Control panel URL:	cpanel.freevnn.com
+MySQL username	freev_32276525
+MySQL password:	**********
+MySQL hostname:	sql102.freevnn.com
+FTP username:	freev_32276525
+FTP password:	**********
+FTP host name:	ftp.freevnn.com
+Your Website URL:	http://haizuka.freevnn.com
+ 	 

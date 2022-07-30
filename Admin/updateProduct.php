@@ -115,7 +115,7 @@ if(isset($_POST['name'])){
 
   if (isset($_FILES["fileToUpload"]) && $_FILES["fileToUpload"]["name"] != "") {
     echo basename($_FILES["fileToUpload"]["name"]);
-    $target_dir = "ImageUploads/";
+    $target_dir = "../assets/ImageUploads/";
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
     $url = $target_file;
     $uploadOk = 1;
