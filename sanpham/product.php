@@ -49,7 +49,6 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/tel.css">
 
-    <!-- Template Main CSS File -->
     <link href="../assets/css/style.css" rel="stylesheet">
 </head>
 
@@ -59,8 +58,6 @@
     <!-- End Header -->
 
     <main id="main">
-
-        <!-- ======= Blog Single Section ======= -->
         <section id="blog" class="blog py-5">
             <div class="container py-5 mt-5" data-aos="fade-up">
 
@@ -169,7 +166,6 @@
                         
 
                     </div>
-                    <!-- End blog entries list -->
 
                     <div class="col-lg-4">
 
@@ -209,13 +205,10 @@
                         <!-- End sidebar -->
 
                     </div>
-                    <!-- End blog sidebar -->
-
                 </div>
 
             </div>
         </section>
-        <!-- End Blog Single Section -->
                             
     </main>
     <!-- End #main -->
