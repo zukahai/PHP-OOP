@@ -2175,3 +2175,8 @@ section {
     color: #fff;
     text-decoration: none;
 }
+
+.btn-danger {
+    font-size: 15px;
+    font-weight: 600;
+}

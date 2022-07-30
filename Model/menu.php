@@ -15,9 +15,9 @@
     if (Account::checkLogin($conn, $usernameCookia, $passwordCookie) == "admin") {
         $htmlLogin = "";
         $htmlAdmin = 
-        '<li class="dropdown text-light" ><a href="#" class="text-light"><span>Admin</span> <i class="bi bi-chevron-down"></i></a>'.
+        '<li class="dropdown text-light" ><a href="#" class="text-ligh font-weight-boldt"><span class="btn btn-danger font-weight-bold">Admin <i class="bi bi-chevron-down"></i></span> </a>'.
             '<ul>'.
-                '<li class="dropdown text-light"><a href="'.$domain.'/Admin/productTable.php"><span>Sản phẩm</span> <i class="bi bi-chevron-right"></i></a>'.
+                '<li class="dropdown text-light"><a href="'.$domain.'/Admin/productTable.php"><span>Quản lý sản phẩm</span> <i class="bi bi-chevron-right"></i></a>'.
                     '<ul>'.
                         '<li><a href="'.$domain.'/Admin/productTable.php">Dach sách sản phẩm</a></li>'.
                         '<li><a href="'.$domain.'/Admin/addProduct.php">Thêm sản phẩm</a></li>'.
