@@ -63,32 +63,7 @@
 <div class="container">
 <?php include "../Model/menu.php" ?>
     <form action="" method="post" enctype="multipart/form-data" class="mt-5 py-5">
-    <div class="form-group ">
-        <label for="id">Mã sản phẩm</label>
-        <input type="text" class="form-control" name="id" id="id"  >
-    </div>
-    <div class="form-group ">
-        <label for="name">Tên sản phẩm</label>
-        <input type="text" class="form-control" name="name" id="name"  >
-    </div>
-    <div class="form-group ">
-        <label for="size">Kích thước/viên</label>
-        <input type="text" class="form-control" name="size" id="size">
-    </div>
-    <div class="form-group ">
-        <label for="mass">Khối lượng</label>
-        <input type="text" class="form-control" name="mass" id="mass"  >
-    </div>
-    <div class="form-group ">
-        <label for="material">Vật liệu</label>
-        <input type="text" class="form-control" name="material" id="material"  >
-    </div>
-    <div class="form-group ">
-        <label for="price">Giá</label>
-        <input type="text" class="form-control" name="price" id="price"  >
-    </div>
-
-    <div class="form-group">
+    <div class="form-group mt-4">
       <label for="detail">Giới thiệu chi tiết sản phẩm</label>
       <textarea id="detail" name="detail"></textarea>
     </div>
@@ -104,15 +79,15 @@
 </div>
 </form>
 <?php
-if(isset($_FILES["fileToUpload"]["name"])){
+if(isset($_FILES["fileToUpload"]["name"]) && $_FILES["fileToUpload"]["tmp_name"] != ""){
   include "../Model/infoDB.php";
 
-  $target_dir = "../assets/ImageUploads/";
+  $target_dir = "../assets/ImageDocuments/";
   // Check if image file is a actual image or fake image
   if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
-      $_FILES["fileToUpload"]["name"] = generateRandomString(50).".png";
+      // $_FILES["fileToUpload"]["name"] = generateRandomString(50).".png";
       echo "File is an image - " . $check["mime"] . ".<br>";
       $uploadOk = 1;
     } else {
@@ -148,53 +123,13 @@ if(isset($_FILES["fileToUpload"]["name"])){
   } else {
     echo "Sorry, there was an error uploading your file.";
   }
-  $id1 = $_POST["id"];
-  $name = $_POST["name"];
-  $size = $_POST["size"];
-  $mass = $_POST["mass"];
-  $material = $_POST["material"];
-  $price = $_POST["price"];
-  $detail = $_POST["detail"];
-
-$sql = "INSERT INTO sanpham(`ID`, `Name`, `Size`, `Mass`, `Material`, `Price`, `URl`, `Detail`)
-  VALUES ('".$id1."', '".$name."', '".$size."', '".$mass."', '".$material."', '".$price."', '".$target_file."', '".$detail."')";
-
-if ($conn->query($sql) === TRUE) {
-  // output data of each row
-    echo '<div class="row">';
-    echo '<div id="myModal" class="modal fade">';
-    echo '<div class="modal-dialog">';
-    echo '<div class="modal-content">';
-    echo '<div class="modal-header">';
-    echo '<h5 class="modal-title">Thông báo</h5>';
-    echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-    echo '</div>';
-    echo '<div class="modal-body">';
-    echo '<div class="alert alert-success">Thêm thành công</div>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-  } else {
-    echo '<div class="row">';
-    echo '<div id="myModal" class="modal fade">';
-    echo '<div class="modal-dialog">';
-    echo '<div class="modal-content">';
-    echo '<div class="modal-header">';
-    echo '<h5 class="modal-title">Thông báo</h5>';
-    echo '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-    echo '</div>';
-    echo '<div class="modal-body">';
-    echo '<div class="alert alert-danger">Thêm thất bại</div>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-    echo '</div>';
-  }
-
 }
+
+if (isset($_POST["detail"])) {
+  $detail = $_POST["detail"];
+  echo $detail;
+}
+
 ?>
   <!-- ======= Footer ======= -->
   <?php include "../Model/footer.php" ?>
